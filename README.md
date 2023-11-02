@@ -5,7 +5,7 @@ A pole is attached by an un-actuated joint to a cart, which moves along a track 
 The pendulum is placed upright on the cart and the goal is to balance the pole by applying forces in the left and right direction on the cart.
 
 ****
-                                                                      Action Space
+                                                                Action Space
 
 The action is a `ndarray` with shape `(1,)` which can take values in the interval `{F_max, F_max}` indicating the magnitude of the force the cart is pushed with. Basically we take a discrete action space, in which the minimum corresponds to -F_max - AKA the maximum force our engine can give - and +F_max as the maximum. The steps between one value and the other is the minimum force our engine can produce, let's say 1 for the time being. Sign - and + refers to our sistem of reference.
 
