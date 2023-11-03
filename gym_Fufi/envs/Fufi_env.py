@@ -96,7 +96,7 @@ from gym.error import DependencyNotInstalled
 **Note**: the parameter sensibility has to be a usable number so that the action space is symmetrical.
 """
 
-class FUFI(gym.Env[np.ndarray, Union[int, np.ndarray]]):
+class FufiEnv(gym.Env[np.ndarray, Union[int, np.ndarray]]):
   metadata = {
         "render_modes": ["human", "rgb_array"],
         "render_fps": 50,
