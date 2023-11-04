@@ -102,7 +102,7 @@ class FufiEnv(gym.Env[np.ndarray, Union[int, np.ndarray]]):
         "render_fps": 50,
     }
 
-  def __init__(self, exp_mode, render_mode: Optional[str] = None):
+  def __init__(self, exp_mode = 's', render_mode: Optional[str] = None):
 ## ---------------------------------------- FUFI parameters --------------------------------------- ##
 ## To be changed according to the instrument
 
