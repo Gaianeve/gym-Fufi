@@ -13,5 +13,5 @@ setup(name='Fufi',
       version='0.0.1',
       url="https://github.com/Gaianeve/gym-Fufi",
       author="Gaia Bartoli",
-      install_requires=["numpy >= 1.18.0", "gym>=0.2.3"]
+      install_requires=install_requires=["gym==0.26.0", "pygame==2.1.0"],
 )
