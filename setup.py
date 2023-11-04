@@ -10,8 +10,8 @@ Original file is located at
 from setuptools import setup
 
 setup(name='Fufi',
-      version='0.1',
+      version='0.0.1',
       url="https://github.com/Gaianeve/gym-Fufi",
       author="Gaia Bartoli",
-      install_requires=['gym', 'math', 'typing', 'pygame']
+      install_requires=["numpy >= 1.18.0", "gym>=0.2.3"]
 )
