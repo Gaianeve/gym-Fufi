@@ -102,7 +102,7 @@ class FufiEnv(gym.Env[np.ndarray, Union[int, np.ndarray]]):
         "render_fps": 50,
     }
 
-  def __init__(self, exp_mode = 's', render_mode: Optional[str] = None):
+  def __init__(self, render_mode: Optional[str] = None):
 ## ---------------------------------------- FUFI parameters --------------------------------------- ##
 ## To be changed according to the instrument
 
@@ -117,7 +117,7 @@ class FufiEnv(gym.Env[np.ndarray, Union[int, np.ndarray]]):
     self.kinematics_integrator = "euler"
     self.sensibility = 0.1      # minimum force mag our engine can produce.
                                 # Here let's take 0.1
-    self.mode = exp_mode        # Way of usage
+    self.mode = 's'       # Way of usage
     assert self.mode == 's' or self.mode == 'r', "Invalid mode. Insert s, for simulation mode; r for real world mode"
     # Angle at which to fail the episode
     self.theta_threshold_radians = 2 * 2 * math.pi / 360
