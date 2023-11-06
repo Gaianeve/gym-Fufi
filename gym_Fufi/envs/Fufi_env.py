@@ -117,8 +117,8 @@ class FufiEnv(gym.Env[np.ndarray, Union[int, np.ndarray]]):
     self.kinematics_integrator = "euler"
     self.sensibility = 0.1      # minimum force mag our engine can produce.
                                 # Here let's take 0.1
-    self.mode = 's'       # Way of usage
-    assert self.mode == 's' or self.mode == 'r', "Invalid mode. Insert s, for simulation mode; r for real world mode"
+    self.exp_mode = 's'       # Way of usage
+    assert self.exp_mode == 's' or self.exp_mode == 'r', "Invalid mode. Insert s, for simulation mode; r for real world mode"
     # Angle at which to fail the episode
     self.theta_threshold_radians = 2 * 2 * math.pi / 360
     # Hits the wall
@@ -159,7 +159,7 @@ class FufiEnv(gym.Env[np.ndarray, Union[int, np.ndarray]]):
 ### ---------------------------------------- STEP FUNCTION -------------------------------------------##
   def step(self, action):
     ## Simulated FUFI
-    if self.mode == 's':
+    if self.exp_mode == 's':
       # Check if action is in the right form
       err_msg = f"{action!r} ({type(action)}) invalid"
       assert self.action_space.contains(action), err_msg
