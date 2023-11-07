@@ -247,8 +247,8 @@ class FufiEnv(gym.Env[np.ndarray, Union[int, np.ndarray]]):
       low, high = utils.maybe_parse_reset_bounds(
           options, -0.05, 0.05  # default low
       )  # default high
-      self.state = self.np_random.uniform(low=low, high=high, size=(3,))
-      self.cart_coordinate = self.np_random.uniform(low=low, high=high, size=(2,))
+      self.state = np.random.uniform(low=low, high=high, size=(3,))
+      self.cart_coordinate = np.random.uniform(low=low, high=high, size=(2,))
       self.steps_beyond_terminated = None
 
       if self.render_mode == "human":
