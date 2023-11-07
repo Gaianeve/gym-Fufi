@@ -128,7 +128,6 @@ class FufiEnv(gym.Env[np.ndarray, Union[int, np.ndarray]]):
     # is still within bounds.
     high = np.array(
         [
-            self.x_threshold * 2,
             np.finfo(np.float32).max,
             self.theta_threshold_radians * 2,
             np.finfo(np.float32).max,
