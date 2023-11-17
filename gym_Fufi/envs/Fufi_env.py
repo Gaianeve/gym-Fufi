@@ -230,7 +230,15 @@ class FufiEnv(gym.Env[np.ndarray, Union[int, np.ndarray]]):
       return np.array(self.state, dtype=np.float32), reward, terminated, False, {}
 
     else:
-      print('Real world cartpole non implemented yet')
+      print('Real world cartp# vectorize environment
+def vectorize_env(gym_id, seed, capture_video, run_name, num_envs):
+  envs = gym.vector.SyncVectorEnv(
+        [make_env(gym_id, seed + i, i, capture_video, run_name) for i in range(num_envs)]
+  )
+  assert isinstance(envs.single_action_space, gym.spaces.Discrete), \
+  "only discrete action space is supported"
+  return envs
+     ole non implemented yet')
 
 
 ### -------------------------------------- RESET FUNCTION ------------------------------------------##
@@ -293,10 +301,10 @@ class FufiEnv(gym.Env[np.ndarray, Union[int, np.ndarray]]):
       cartwidth = 50.0
       cartheight = 30.0
 
-      if self.state is None:
+      if self.cart_coordinate is None:
           return None
 
-      x = self.state
+      x = self.cart_coordinate
 
       self.surf = pygame.Surface((self.screen_width, self.screen_height))
       self.surf.fill((255, 255, 255))
