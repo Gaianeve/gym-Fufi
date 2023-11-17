@@ -258,6 +258,7 @@ class FufiEnv(gym.Env[np.ndarray, Union[int, np.ndarray]]):
 ### -------------------------------- RENDER FUNCTION ------------------------------------- ##
 # Display the environment
   def render(self, render_mode = 'rgb_array'):
+      print('start rendering')
       if self.render_mode is None:
           gym.logger.warn(
               "You are calling render method without specifying any render mode. "
