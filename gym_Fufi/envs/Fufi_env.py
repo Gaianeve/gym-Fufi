@@ -230,15 +230,7 @@ class FufiEnv(gym.Env[np.ndarray, Union[int, np.ndarray]]):
       return np.array(self.state, dtype=np.float32), reward, terminated, False, {}
 
     else:
-      print('Real world cartp# vectorize environment
-def vectorize_env(gym_id, seed, capture_video, run_name, num_envs):
-  envs = gym.vector.SyncVectorEnv(
-        [make_env(gym_id, seed + i, i, capture_video, run_name) for i in range(num_envs)]
-  )
-  assert isinstance(envs.single_action_space, gym.spaces.Discrete), \
-  "only discrete action space is supported"
-  return envs
-     ole non implemented yet')
+      print('Real world cartpole non implemented yet')
 
 
 ### -------------------------------------- RESET FUNCTION ------------------------------------------##
