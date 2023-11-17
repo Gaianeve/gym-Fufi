@@ -245,10 +245,10 @@ class FufiEnv(gym.Env[np.ndarray, Union[int, np.ndarray]]):
       # Note that if you use custom reset bounds, it may lead to out-of-bound
       # state/observations.
       low, high = utils.maybe_parse_reset_bounds(
-          options, -0.05, 0.05  # default low
+          options, -0.03, 0.03  # default low
       )  # default high
-      self.state = np_random.uniform(low=low, high=high, size=(3,))
-      self.cart_coordinate = np_random.uniform(low=low, high=high, size=(2,))
+      self.state = np.random.uniform(low=low, high=high, size=(3,))
+      self.cart_coordinate = np.random.uniform(low=low, high=high, size=(2,))
       self.steps_beyond_terminated = None
 
       if self.render_mode == "human":
