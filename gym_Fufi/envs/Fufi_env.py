@@ -323,7 +323,7 @@ class FufiEnv(gym.Env[np.ndarray, Union[int, np.ndarray]]):
 
       pole_coords = []
       for coord in [(l, b), (l, t), (r, t), (r, b)]:
-          coord = pygame.math.Vector2(coord).rotate_rad(-x[2])
+          coord = pygame.math.Vector2(coord).rotate_rad(-x[1])
           coord = (coord[0] + cartx, coord[1] + carty + axleoffset)
           pole_coords.append(coord)
       gfxdraw.aapolygon(self.surf, pole_coords, (202, 152, 101))
