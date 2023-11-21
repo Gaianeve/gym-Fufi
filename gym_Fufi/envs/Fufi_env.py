@@ -253,7 +253,9 @@ class FufiEnv(gym.Env[np.ndarray, Union[int, np.ndarray]]):
 
       if self.render_mode == "human":
           self.render()
-      return np.array(self.state, dtype=np.float32)
+          
+      debug_info = {}
+      return np.array(self.state, dtype=np.float32), debug_info
 
 ### -------------------------------- RENDER FUNCTION ------------------------------------- ##
 # Display the environment
