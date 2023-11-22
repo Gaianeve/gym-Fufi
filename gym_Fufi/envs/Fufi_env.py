@@ -69,7 +69,7 @@ In simulation mode all observations are assigned a uniformly random value in `(-
                                   Episode End
 
 The episode ends if any one of the following occurs:
-1. Termination: Pole Angle is greater than ±2°;
+1. Termination: Pole Angle is greater than ±10°;
 2. Termination: Cart Position is greater than ±2.4,that is when the center of the cart reaches the edge of the display;
 3. Truncation: Episode length is greater than 1500;
 ****
@@ -120,7 +120,7 @@ class FufiEnv(gym.Env[np.ndarray, Union[int, np.ndarray]]):
     self.exp_mode = 's'       # Way of usage
     assert self.exp_mode == 's' or self.exp_mode == 'r', "Invalid mode. Insert s, for simulation mode; r for real world mode"
     # Angle at which to fail the episode
-    self.theta_threshold_radians = 2 * 2 * math.pi / 360
+    self.theta_threshold_radians = 12 * 2 * math.pi / 360
     # Hits the wall
     self.x_threshold = 2.4
 
@@ -150,7 +150,7 @@ class FufiEnv(gym.Env[np.ndarray, Union[int, np.ndarray]]):
     self.screen = None
     self.clock = None
     self.isopen = True
-    self.state = None
+    self.state = None #a_t, theta, theta_dot
     self.cart_coordinate = None # x, x_dot
 
     self.steps_beyond_terminated = None
