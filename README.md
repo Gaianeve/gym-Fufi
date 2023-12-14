@@ -32,7 +32,7 @@ The observation is a `ndarray` with shape `(4,)` with the values corresponding t
 
     |Num|   Observation  |    Min     |    Max    |
     |---|----------------|------------|-----------|
-    | 0 |  Pole a_t      | -F_max/m_p | F_max/m_p |
+    | 0 |  Acc_t         | -F_max/M   | F_max/M |
     | 1 | Pole Theta     | ~ (-24°)   | ~ (24°)   |
     | 2 | Pole Theta dot |    -Inf    |   Inf     |
 
@@ -60,7 +60,7 @@ In simulation mode all observations are assigned a uniformly random value in `(-
                                                                           Episode End
 
 The episode ends if any one of the following occurs:
-1. Termination: Pole Angle is greater than ±2°;
+1. Termination: Pole Angle is greater than ±12°;
 2. Termination: Cart Position is greater than ±2.4,that is when the center of the cart reaches the edge of the display;
 3. Truncation: Episode length is greater than 1500;
 ****
